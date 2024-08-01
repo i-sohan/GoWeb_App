@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devopsproj
+  labels:
+    app: devopsproj
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devopsproj
+  template:
+    metadata:
+      labels:
+        app: devopsproj
+    spec:
+      containers:
+      - name: devopsproj
+        image: sohanmsis123/devopsproj:v1
+        ports:
+        - containerPort: 8080
